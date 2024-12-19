@@ -1,0 +1,21 @@
+# To connect to mysql database execute the following
+# docker exec -it test sh -c ‘mysql -uroot -p$MYSQL_ROOT_PASSWORD’
+#
+# To setup the database, execute the following instead
+# docker exec -i myblog-db sh -c ’mysql -uroot -p$MYSQL_ROOT_PASSWORD‘ < setup.sql
+
+name: "myblog"
+services:
+  db:
+    image: mysql:latest
+    container_name: myblog-db
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQL_DATABASE
+      - MYSQL_USER=$MYSQL_USER
+      - MYSQL_PASSWORD=$MYSQL_PASSWORD
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    ports:
+      - "$MYSQL_PORT:3306"
