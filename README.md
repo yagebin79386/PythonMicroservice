@@ -1,6 +1,5 @@
 # FastAPI MySQL Blog API
-
-This is a simple RESTful API for managing blog articles and user authentication, built with **FastAPI** and **SQLModel**. It connects to a MySQL database for storing user and article data.
+Use RESTful API for managing blog articles and user authentication, built with **FastAPI** and **SQLModel**. It connects to a MySQL database for storing user and article data.
 
 ## Features
 
